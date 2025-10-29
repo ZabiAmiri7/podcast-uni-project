@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Einfaches HTML Beispiel</title>
+  <style>
+    /* Einfache, saubere Styles */
+    :root{
+      --bg:#f7f8fa;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --text:#0f172a;
+      --muted:#566270;
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{
+      max-width:900px;
+      margin:40px auto;
+      padding:20px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(37,99,235,0.15);
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(15,23,42,0.06);
+    }
+    a.button{
+      display:inline-block;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--accent);
+      color:white;
+      font-weight:600;
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+    /* Form minimal */
+    form input, form textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #e6eef8;
+      margin-top:8px;
+      box-sizing:border-box;
+      font-size:1rem;
+    }
+    form label{ font-weight:600; margin-top:12px; display:block; color:var(--muted) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">HT</div>
+      <div>
+        <h1 style="margin:0;font-size:1.25rem">Einfaches HTML Beispiel</h1>
+        <p style="margin:4px 0 0;color:var(--muted)">Saubere Struktur, minimale Styles — sofort startklar.</p>
+      </div>
+    </header>
+
+    <main class="card" role="main" aria-labelledby="main-title">
+      <h2 id="main-title">Was dieses Beispiel zeigt</h2>
+      <ul>
+        <label>Html ist cool</label>
+        <li>HTML5 Grundstruktur mit Meta-Tags</li>
+        <li>Einfaches CSS für Layout und Buttons</li>
+        <li>Formular mit Eingabefeldern (kein Backend)</li>
+        <li>Barrierefreundliche Struktur (aria, semantic tags)</li>
+      </ul>
+
+      <section style="margin-top:14px">
+        <h3>Kurzer in-page Link</h3>
+        <p>Springe zu <a href="#kontakt">Kontakt</a>.</p>
+      </section>
+
+      <section style="margin-top:14px">
+        <h3>Beispiel-Formular</h3>
+        <form onsubmit="alert('Formular abgeschickt (nur Demo).'); return false;">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Dein Name" required>
+
+          <label for="email">E-Mail</label>
+          <input id="email" type="email" placeholder="name@beispiel.de" required>
+
+          <label for="msg">Nachricht</label>
+          <textarea id="msg" rows="4" placeholder="Schreibe etwas..." required></textarea>
+
+          <div style="margin-top:12px">
+            <button type="submit" class="button">Absenden</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="kontakt" style="margin-top:18px">
+        <h3>Kontakt</h3>
+        <p>Mehr erfahren: <a class="button" href="https://example.com" target="_blank" rel="noopener">Demo Link</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="jahr"></span> Mein Projekt — lokal geöffnet</p>
+    </footer>
+  </div>
+
+  <script>
+    // Kleines Script: aktuelles Jahr eintragen
+    document.getElementById('jahr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
