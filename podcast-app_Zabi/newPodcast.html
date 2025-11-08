@@ -2,11 +2,85 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Neuen Podcast anlegen</title>
 </head>
 <body>
-    <h1>new Branch Suchformular</h1>
-    <h2>Was Läuft digga</h2>
-    
+
+<header>
+    <h1>D & Z Podcasts</h1>
+    <h2>Hören Sie kostenlos Podcasts ohne Werbung</h2>
+</header>
+
+<nav>
+    <a href="podcast-app_Zabi/index.html">Abonnierte Podcasts |</a>
+    <a href="podcast-app_Zabi/podcast.html">Details zum Podcast |</a>
+    <a href="podcast-app_Zabi/episode.html">Details zu Episoden</a>
+</nav>
+
+<main>
+    <form action="https://edu.inf.fh-dortmund.de/podcastService/testCreatePodcast.php" method="post">
+        <fieldset>
+            <legend>Neuen Podcast anlegen</legend>
+
+            <label for="title">Titel*</label>
+            <input type="text" id="title" name="pctitle"
+                   maxlength="100" required
+                   placeholder="z.B. Tech Talk Weekly"
+                   pattern="^[A-ZÄÖÜ][A-Za-z0-9ÄÖÜäöüß\s]{0,99}$"
+                   title="Muss mit Großbuchstaben beginnen, max. 100 Zeichen">
+            <br><br>
+
+            <label for="beschreibung">Beschreibung</label><br>
+            <textarea id="beschreibung" name="pcdescription" maxlength="500"
+                      placeholder="Kurze Podcastbeschreibung (max. 500 Zeichen)"
+                      rows="4"></textarea>
+            <br><br>
+
+            <label for="autor">Autor(en)*</label>
+            <input type="text" id="autor" name="pcauthors"
+                   pattern="^[^,]+(,[^,]+)*$"
+                   placeholder="Vorname Nachname,Vorname Nachname"
+                   title="Kommagetrennte Namen, kein Komma am Ende"
+                   required>
+            <br><br>
+
+            <label for="ownername">Name des Besitzers*</label>
+            <input type="text" id="ownername" name="pcownername"
+                   placeholder="Max Mustermann"
+                   required>
+            <br><br>
+
+            <label for="owneremail">E-Mail des Besitzers*</label>
+            <input type="email" id="owneremail" name="pcowneremail"
+                   placeholder="name@example.com"
+                   required>
+            <br><br>
+
+            <label for="kategorie">Kategorie(n)</label>
+            <select id="kategorie" name="pccategories" multiple>
+                <option value="bildung">Bildung</option>
+                <option value="technologie">Technologie</option>
+                <option value="unterhaltung">Unterhaltung</option>
+            </select>
+            <br><br>
+
+            <label for="datum">Letztes Update (Datum)*</label>
+            <input type="date" id="datum" name="pclastupdatedate"
+                   min="2020-01-01"
+                   required>
+            <br><br>
+
+            <label for="uhrzeit">Letztes Update (Uhrzeit)*</label>
+            <input type="time" id="uhrzeit" name="pclastupdatetime"
+                   min="00:00" max="23:59" step="60"
+                   required>
+            <br><br>
+
+            <input type="submit" value="Speichern">
+        </fieldset>
+    </form>
+</main>
+<aside></aside>
+    <footer>&copy D & Z Inc.</footer>
 </body>
 </html>
