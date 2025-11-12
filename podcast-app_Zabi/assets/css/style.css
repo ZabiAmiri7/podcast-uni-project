@@ -1,0 +1,7 @@
+h1, h2{
+    size: 2em;
+    border: solid lightgray;
+    border-radius: 5px;
+    padding: 1%;
+
+}
