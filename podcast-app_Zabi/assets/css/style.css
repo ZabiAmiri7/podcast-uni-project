@@ -5,3 +5,34 @@ h1, h2{
     padding: 1%;
 
 }
+
+/* Navigation einfärben */
+nav {
+  background-color: #333;     /* dunkler Hintergrund */
+  color: white;               /* Textfarbe */
+  padding: 10px;
+}
+
+nav a {
+  color: white;               /* Links auch weiß */
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+/* Bereich "Neueste Episoden" einfärben */
+section:nth-of-type(2) {
+  background-color: #f2f2f2;  /* heller Hintergrund */
+  color: black;               /* dunkler Text */
+  padding: 15px;
+  border-radius: 5px; /*Ecken runden*/
+}
+
+/* Generell: etwas Abstand für alle Sections schönheit*/
+section {
+  margin: 20px 0;
+}
+
+label,
+legend {
+  font-weight: bold;
+}
