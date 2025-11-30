@@ -1,3 +1,6 @@
+body{
+  font-family: Arial, Helvetica;
+}
 h1, h2{
     size: 2em;
     border: solid lightgray;
@@ -8,25 +11,63 @@ h1, h2{
 
 /* Navigation einfärben */
 nav {
-  background-color: #333;     /* dunkler Hintergrund */
   color: white;               /* Textfarbe */
   padding: 10px;
+  background-color: #f2f2f2;
 }
 
 nav a {
+  border-radius: 2px;
+  background-color: rgb(255, 89, 0); 
   color: white;               /* Links auch weiß */
   text-decoration: none;
-  margin-right: 8px;
+  margin-right: 10px;
+  padding: 10px 10px;
+  
 }
 
-/* Bereich "Neueste Episoden" einfärben auch bei den abonnierte Podcasts sieht besser aus */
+nav a:hover{
+background-color:lightblue;
+}
+
+/* Tabellenkopf */
+#neusteEpisoden thead th {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px;
+}
+
+/* Ungerade Zeilen */
+#neusteEpisoden tbody tr:nth-child(odd) td {
+    background-color: #82c4f3;
+    color: black;  /* Textfarbe anpassen */
+}
+
+/* Gerade Zeilen */
+#neusteEpisoden tbody tr:nth-child(even) td {
+    background-color: #ffffff;
+    color: black;
+}
+a[href*="@"]::before {
+    content: "✉:";   
+    margin-right: 5px; 
+}
+
+
+/* bei den Rest freiwillig*/
 section:nth-of-type(2) {
   background-color: #f2f2f2;  /* heller Hintergrund */
   color: black;               /* dunkler Text */
   padding: 15px;
   border-radius: 5px; /*Ecken runden*/
 }
-
+#neusteBereichEpisode{
+  background-color:#f2f2f2;
+  color: black;               /* dunkler Text */
+  padding: 15px;
+  border-radius: 5px; /*Ecken runden*/
+  border: 2px solid;
+}
 /* Generell: etwas Abstand für alle Sections schönheit*/
 section {
   margin: 20px 0;
