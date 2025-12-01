@@ -11,7 +11,8 @@
       </figure>
       <h1>D & Z Podcasts</h1>
       <h2>hören sie kostenlos Podcasts ohne Werbung</h2>
-      <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> 
+      <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="./assets/css/forms.css" />
     </header>
     <nav>
       <a href="./index.html">Abbonierte Podcasts</a>
@@ -27,92 +28,113 @@
         action="https://edu.inf.fh-dortmund.de/podcastService/testCreatePodcast.php"
         method="post"
       >
+        <!--Formular zum Anlegen von neuen Podcast-->
         <fieldset>
           <legend>Neuen Podcast anlegen</legend>
 
-          <label for="title">Titel*</label>
-          <input
-            type="text"
-            id="title"
-            name="pctitle"
-            maxlength="100"
-            required
-            placeholder="z.B. Tech Talk Weekly"
-            pattern="^[A-ZÄÖÜ][A-Za-z0-9ÄÖÜäöüß\s]{0,99}$"
-            title="Muss mit Großbuchstaben beginnen, max. 100 Zeichen"
-          />
+          <!--Daten zum Podcast-->
+          <fieldset>
+            <legend>Daten</legend>
+            <label for="title" class="required">Titel: </label>
+            <input
+              type="text"
+              id="title"
+              name="pctitle"
+              maxlength="100"
+              required
+              placeholder="z.B. Tech Talk Weekly"
+              pattern="^[A-ZÄÖÜ][A-Za-z0-9ÄÖÜäöüß\s]{0,99}$"
+              title="Muss mit Großbuchstaben beginnen, max. 100 Zeichen"
+            />
+
+            <br /><br />
+
+            <label for="beschreibung">Beschreibung: </label><br />
+            <textarea
+              id="beschreibung"
+              name="pcdescription"
+              maxlength="500"
+              placeholder="Kurze Podcastbeschreibung (max. 500 Zeichen)"
+              rows="4"
+            ></textarea>
+            <br /><br />
+            <label for="kategorie">Kategorie(n): </label>
+            <select id="kategorie" name="pccategories" multiple>
+              <option value="bildung">Bildung</option>
+              <option value="technologie">Technologie</option>
+              <option value="unterhaltung">Unterhaltung</option>
+            </select>
+            <br /><br />
+          </fieldset>
+
           <br /><br />
 
-          <label for="beschreibung">Beschreibung</label><br />
-          <textarea
-            id="beschreibung"
-            name="pcdescription"
-            maxlength="500"
-            placeholder="Kurze Podcastbeschreibung (max. 500 Zeichen)"
-            rows="4"
-          ></textarea>
+          <!--Verantworliche Person-->
+          <fieldset>
+            <legend>Verantwortliche Personen</legend>
+            <label for="autor" class="required">Autor(en): </label>
+            <input
+              type="text"
+              id="autor"
+              name="pcauthors"
+              pattern="^[^,]+(,[^,]+)*$"
+              placeholder="Vorname Nachname,Vorname Nachname"
+              title="Kommagetrennte Namen, kein Komma am Ende"
+              required
+            />
+            <br /><br />
+
+            <label for="ownername" class="required">Name des Besitzers:</label>
+            <input
+              type="text"
+              id="ownername"
+              name="pcownername"
+              placeholder="Max Mustermann"
+              required
+            />
+            <br /><br />
+
+            <label for="owneremail" class="required"
+              >E-Mail des Besitzers:
+            </label>
+            <input
+              type="email"
+              id="owneremail"
+              name="pcowneremail"
+              placeholder="name@example.com"
+              required
+            />
+          </fieldset>
+
           <br /><br />
 
-          <label for="autor">Autor(en)*</label>
-          <input
-            type="text"
-            id="autor"
-            name="pcauthors"
-            pattern="^[^,]+(,[^,]+)*$"
-            placeholder="Vorname Nachname,Vorname Nachname"
-            title="Kommagetrennte Namen, kein Komma am Ende"
-            required
-          />
-          <br /><br />
+          <!--Letztes Update-->
+          <fieldset>
+            <legend>Letztes Update</legend>
+            <label for="datum" class="required">Letztes Update (Datum): </label>
+            <input
+              type="date"
+              id="datum"
+              name="pclastupdatedate"
+              min="2020-01-01"
+              required
+            />
+            <br /><br />
 
-          <label for="ownername">Name des Besitzers*</label>
-          <input
-            type="text"
-            id="ownername"
-            name="pcownername"
-            placeholder="Max Mustermann"
-            required
-          />
-          <br /><br />
+            <label for="uhrzeit" class="required"
+              >Letztes Update (Uhrzeit):
+            </label>
+            <input
+              type="time"
+              id="uhrzeit"
+              name="pclastupdatetime"
+              min="00:00"
+              max="23:59"
+              step="60"
+              required
+            />
+          </fieldset>
 
-          <label for="owneremail">E-Mail des Besitzers*</label>
-          <input
-            type="email"
-            id="owneremail"
-            name="pcowneremail"
-            placeholder="name@example.com"
-            required
-          />
-          <br /><br />
-
-          <label for="kategorie">Kategorie(n)</label>
-          <select id="kategorie" name="pccategories" multiple>
-            <option value="bildung">Bildung</option>
-            <option value="technologie">Technologie</option>
-            <option value="unterhaltung">Unterhaltung</option>
-          </select>
-          <br /><br />
-
-          <label for="datum">Letztes Update (Datum)*</label>
-          <input
-            type="date"
-            id="datum"
-            name="pclastupdatedate"
-            min="2020-01-01"
-            required
-          />
-          <br /><br />
-
-          <label for="uhrzeit">Letztes Update (Uhrzeit)*</label>
-          <input
-            type="time"
-            id="uhrzeit"
-            name="pclastupdatetime"
-            min="00:00"
-            max="23:59"
-            step="60"
-            required
-          />
           <br /><br />
 
           <input type="submit" value="Speichern" />
