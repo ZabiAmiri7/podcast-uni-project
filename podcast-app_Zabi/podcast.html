@@ -4,24 +4,25 @@
     <meta charset="UTF-8" />
     <title>Datailseite zu einem Podcast</title>
   </head>
-  <body>
-    <header>
+  <body id="podcast_Grid">
+    <header id="item1">
       <figure>
         <img src="./assets/img/logo.png" alt="Logo" width="200" height="200" />
       </figure>
       <h1>D & Z Podcasts</h1>
       <h2>hören sie kostenlos Podcasts ohne Werbung</h2>
       <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="./assets/css/grid.css" />
     </header>
-    <nav>
+    <nav id="item2">
       <a href="./index.html">Abbonierte Podcasts</a>
       <a href="./newPodcast.html">Neuen Podcast anlegen</a>
       <a href="./podcast.html">Details zum Podcast</a>
       <a href="./episode.html">Details zur Episoden</a>
     </nav>
 
-    <main>
-      <section>
+    <main id="item3" class="podgrid">
+      <section id="item3_1">
         <h2>Informationen zum Podcast:</h2>
         <h3>
           <a
@@ -48,6 +49,9 @@
           <li>Kategorie:News, Wirtschaft</li>
           <li>Letztes Update: <data value="02.11.2025">02.11.2025</data></li>
         </ul>
+      </section>
+      <section id="item3_2">
+        <img src="./assets/img/morning.png" alt="Titelblattbild">
       </section>
       <section id="neusteBereichEpisode">
         <h2>Neueste Episoden</h2>
@@ -113,7 +117,17 @@
         </table>
       </section>
     </main>
-    <aside></aside>
-    <footer>&copy D & Z Inc.</footer>
+    <aside id="item4">
+        <h2>Zusatzinformationen zum Podcast</h2>
+  <ul>
+    <li>Sprache: Deutsch</li>
+    <li>Laufzeit pro Episode: ca. 20–30 Minuten</li>
+    <li>Verfügbarkeit: Kostenlos auf allen gängigen Plattformen</li>
+    <li>Veröffentlichung: Wöchentlich, jeden Montag</li>
+    <li>Empfohlen für: Wirtschaft, Politik und Finanzinteressierte</li>
+    <li>Kontakt: <a href="mailto:kontakt@handelsblattgroup.com">kontakt@handelsblattgroup.com</a></li>
+  </ul>
+    </aside>
+    <footer id="item5">&copy D & Z Inc.</footer>
   </body>
 </html>
