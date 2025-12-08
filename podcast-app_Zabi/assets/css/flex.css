@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  border: 1px solid white;
+  padding: 1em;
+  flex-direction: column;
+  width: 100%;
+}
+#Hauptinhalt {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

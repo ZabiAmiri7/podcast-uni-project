@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Liste der abonnierten Podcasts</title>
+    <title>Abbonierte Podcasts</title>
   </head>
   <body>
     <header>
       <figure>
-        <img src="./assets/img/logo.png" alt="Logo" width="200" height="200" />
+        <img
+          src="./assets/img/logo.png"
+          id="logo"
+          alt="Logo"
+          width="200"
+          height="200"
+        />
       </figure>
-      <h1>D & Z Podcasts</h1>
-      <h2>hören sie kostenlos Podcasts ohne Werbung</h2>
+      <h1 id="WebName">
+        <strong>D & Z Podcasts</strong>
+        <br />
+        <br />
+        <small>hören sie kostenlos Podcasts ohne Werbung</small>
+      </h1>
       <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="./assets/css/flex.css" />
     </header>
     <nav>
       <a href="./index.html">Abbonierte Podcasts</a>
@@ -19,73 +30,76 @@
       <a href="./podcast.html">Details zum Podcast</a>
       <a href="./episode.html">Details zur Episoden</a>
     </nav>
-    <main>
-      <section>
-        <h2>Suche abbonierte Podcasts</h2>
-      </section>
-      <form
-        action="http://edu.inf.fhdortmund.
-de/podcastService/testPodcastSearch.php"
-        method="get"
-      >
-        <label for="suche">Suche hier starten: </label>
-        <input
-          type="search"
-          name="Suche Abbonierte Podcasts"
-          id="suche"
-          pattern="[A-Z]+[A-Z,0-9, ,ca-z]*"
-          size="50"
-          maxlength="100"
-          placeholder="Titel eingaben ..."
-          required
-        />
-        <button type="submit">Finden</button>
-      </form>
+    <div id="Hauptinhalt">
+      <main>
+        <section>
+          <h2>Suche abbonierte Podcasts</h2>
+        </section>
+        <form
+          action="http://edu.inf.fhdortmund.
+                  de/podcastService/testPodcastSearch.php"
+          method="get"
+        >
+          <label for="suche">Suche hier starten: </label>
+          <input
+            type="search"
+            name="Suche Abbonierte Podcasts"
+            id="suche"
+            pattern="[A-Z]+[A-Z,0-9, ,ca-z]*"
+            size="50"
+            maxlength="100"
+            placeholder="Titel eingaben ..."
+            required
+          />
+          <button type="submit">Finden</button>
+        </form>
 
-      <section>
-        <h2>Abbonierte Podcasts</h2>
-        <article>
-          <ul>
-            <li>
-              <a
-                href="https://podcasts.apple.com/de/podcast/handelsblatt-morning-briefing-news-aus-wirtschaft-politik/id1352434240"
-              >
-                Morning Briefing</a
-              >
-              <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
-            </li>
-            <li>
-              <a href="https://podcasts.apple.com/de/podcast/byte/id1775506601"
-                >Byte</a
-              >
-              <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
-            </li>
-            <li>
-              <a
-                href="https://podcasts.apple.com/de/podcast/quarks-daily/id1501505787"
-                >Quark Daily</a
-              >
-              <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
-            </li>
-            <li>
-              <a
-                href="https://podcasts.apple.com/de/podcast/sternstunde-philosophie/id1532744254"
-                >Sternstunde Philosophie</a
-              >
-              <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
-            </li>
-            <li>
-              <a
-                href="https://podcasts.apple.com/de/podcast/passwort-der-podcast-von-heise-security/id1747674409"
-                >Passwort - der Pocast von heise security</a
-              >
-              <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
-            </li>
-          </ul>
-        </article>
-      </section>
-    </main>
-    <aside></aside>
+        <section>
+          <h2>Abbonierte Podcasts</h2>
+          <article>
+            <ul>
+              <li>
+                <a
+                  href="https://podcasts.apple.com/de/podcast/handelsblatt-morning-briefing-news-aus-wirtschaft-politik/id1352434240"
+                >
+                  Morning Briefing</a
+                >
+                <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
+              </li>
+              <li>
+                <a
+                  href="https://podcasts.apple.com/de/podcast/byte/id1775506601"
+                  >Byte</a
+                >
+                <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
+              </li>
+              <li>
+                <a
+                  href="https://podcasts.apple.com/de/podcast/quarks-daily/id1501505787"
+                  >Quark Daily</a
+                >
+                <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
+              </li>
+              <li>
+                <a
+                  href="https://podcasts.apple.com/de/podcast/sternstunde-philosophie/id1532744254"
+                  >Sternstunde Philosophie</a
+                >
+                <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
+              </li>
+              <li>
+                <a
+                  href="https://podcasts.apple.com/de/podcast/passwort-der-podcast-von-heise-security/id1747674409"
+                  >Passwort - der Pocast von heise security</a
+                >
+                <abbr title="verfügbar Episoden">(Episoden : 5)</abbr>
+              </li>
+            </ul>
+          </article>
+        </section>
+      </main>
+      <aside>Zusatzinformationen</aside>
+    </div>
     <footer>&copy D & Z Inc.</footer>
   </body>
 </html>

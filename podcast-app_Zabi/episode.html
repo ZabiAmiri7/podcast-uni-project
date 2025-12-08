@@ -7,11 +7,22 @@
   <body>
     <header>
       <figure>
-        <img src="./assets/img/logo.png" alt="Logo" width="200" height="200" />
+        <img
+          src="./assets/img/logo.png"
+          id="logo"
+          alt="Logo"
+          width="200"
+          height="200"
+        />
       </figure>
-      <h1>D & Z Podcasts</h1>
-      <h2>hören sie kostenlos Podcasts ohne Werbung</h2>
+      <h1 id="WebName">
+        <strong>D & Z Podcasts</strong>
+        <br />
+        <br />
+        <small>hören sie kostenlos Podcasts ohne Werbung</small>
+      </h1>
       <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="./assets/css/flex.css" />
     </header>
     <nav>
       <a href="./index.html">Abbonierte Podcasts</a>
@@ -19,48 +30,53 @@
       <a href="./podcast.html">Details zum Podcast</a>
       <a href="./episode.html">Details zur Episoden</a>
     </nav>
-
-    <main>
-      <section>
-        <h2 id="Episode_231">
-          Episode 231: Welthandel: Wege aus der Abhängigkeit von China
-        </h2>
-        <figure>
-          <img
-            src="./assets/img/podcastxy.png"
-            alt="Handelsblatt Morning Briefing Logo"
-            height="300"
-            width="300"
-          />
-          <figcaption>Handelsblatt Morning Briefing</figcaption>
-        </figure>
-        <h3>
-          <a
-            href="https://podcasts.apple.com/de/podcast/handelsblatt-morning-briefing-news-aus-wirtschaft-politik/id1352434240"
+    <div id="Hauptinhalt">
+      <main>
+        <section>
+          <h2 id="Episode_231">
+            Episode 231: Welthandel: Wege aus der Abhängigkeit von China
+          </h2>
+          <figure>
+            <img
+              src="./assets/img/podcastxy.png"
+              alt="Handelsblatt Morning Briefing Logo"
+              height="300"
+              width="300"
+            />
+            <figcaption>Handelsblatt Morning Briefing</figcaption>
+          </figure>
+          <h3>
+            <a
+              href="https://podcasts.apple.com/de/podcast/handelsblatt-morning-briefing-news-aus-wirtschaft-politik/id1352434240"
+            >
+              <strong>Welthandel: Wege aus der Abhängigkeit von China</strong>
+            </a>
+          </h3>
+          <ul>
+            <li>
+              Bescheibung: In den Industrieländern wird immer weniger Alkohol
+              getrunken. Bierbrauer und Schnapsbrenner rangieren an der Börse
+              weit unter ihren Höchstständen. Ein Fondsmanager sieht darin eine
+              Chance.
+            </li>
+            <li>
+              Erscheinungsdatum: <data value="02.11.2025">02.11.2025</data>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Abspielen:</h2>
+          <audio
+            src="./assets/audio/Morning_Briefing_Welthandel.mp3"
+            controls
+            autoplay
           >
-            <strong>Welthandel: Wege aus der Abhängigkeit von China</strong>
-          </a>
-        </h3>
-        <ul>
-          <li>
-            Bescheibung: In den Industrieländern wird immer weniger Alkohol
-            getrunken. Bierbrauer und Schnapsbrenner rangieren an der Börse weit
-            unter ihren Höchstständen. Ein Fondsmanager sieht darin eine Chance.
-          </li>
-          <li>Erscheinungsdatum: <data value="02.11.2025">02.11.2025</data></li>
-        </ul>
-      </section>
-      <h2>Abspielen:</h2>
-      <audio
-        src="./assets/audio/Morning_Briefing_Welthandel.mp3"
-        controls
-        autoplay
-      >
-        Ihre Browser unterstüzt das Audio-Element nicht!
-      </audio>
-      <section></section>
-    </main>
-    <aside></aside>
+            Ihre Browser unterstüzt das Audio-Element nicht!
+          </audio>
+        </section>
+      </main>
+      <aside>Zusatzinformationen</aside>
+    </div>
     <footer>&copy D & Z Inc.</footer>
   </body>
 </html>
