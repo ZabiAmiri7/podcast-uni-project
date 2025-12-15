@@ -9,7 +9,17 @@
                          "area3 area3 area4"
                          "area5 area5 area5";
 }
-
+@media screen and (max-width:768px){
+    #podcast_Grid{
+        grid-template-columns: 1fr; /* nur eine Spalte */
+        grid-template-rows: auto auto 1fr auto auto; 
+        grid-template-areas: "area1"
+                             "area2"
+                             "area3"
+                             "area4"
+                             "area5";
+    }
+}
 /* Zuweisung der äußeren Bereiche */
 #item1 { grid-area: area1; } /* Kopfbereich */
 #item2 { grid-area: area2; } /* Navigationsbereich */
@@ -30,7 +40,15 @@
     grid-template-areas: "area3_1 area3_2"
                          "area3_3 area3_3"; /* Episodenliste über gesamte Breite */
 }
-
+@media screen and (max-width:480px){
+    #item3.podgrid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:"area3_1"
+                            "area3_2"
+                            "area3_3"
+    }
+}
 /* Zuweisung der inneren Bereiche von #item3 */
 #item3_1 { 
     grid-area: area3_1; /* Informationen zum Podcast */
