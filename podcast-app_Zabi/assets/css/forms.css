@@ -21,6 +21,7 @@ textarea:focus {
 }
 
 /* Stern * hinzufuegen
+mann konnte hier anstatt eine Klasse eine CSS-Eigenschaft verwenden!!!
 */
 label.required::after {
   content: "*";
