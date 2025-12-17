@@ -1,11 +1,13 @@
+/*aus style.css*/
 body {
   font-family: Arial, Helvetica;
 }
-h1, h2{
-    font-size: 2em;
-    border: solid lightgray;
-    border-radius: 5px;
-    padding: 1%; /*eventuell hier fragen*/
+h1,
+h2 {
+  font-size: 2em;
+  border: solid lightgray;
+  border-radius: 5px;
+  padding: 1%; /*eventuell hier fragen*/
 }
 
 /* Navigation einfärben */
@@ -92,13 +94,76 @@ nav {
   justify-content: flex-start;
 }
 /*Anpassung von Copyright*/
-footer{
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 10px 20px;
   text-align: left;
- 
 }
 
+/*Kleine Änderung*/
+aside {
+  background-color: lightblue;
+  flex: 1;
+}
+
+/*aus flex.css*/
+main {
+  display: flex;
+  border: 1px solid white;
+  padding: 1em;
+  flex-direction: column;
+  width: 100%;
+  flex: 3;
+}
+
+#Hauptinhalt {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 25px;
+  padding: 2px;
+}
+
+/*Kacheln*/
+#abos {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 14px;
+  padding: 5px;
+  margin: 8px;
+  justify-content: left;
+}
+
+#abos li {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+  height: auto;
+  margin: 3px;
+  padding: 2px;
+}
+#abos li img {
+  width: 100px;
+  height: 100px;
+  margin: 3px;
+  padding: 2px;
+}
+
+/*Responsive Flexbox-Layout*/
+
+@media (max-width: 768px) {
+  #Hauptinhalt {
+    flex-direction: column;
+  }
+
+  main,
+  aside {
+    flex: none;
+    width: 100%;
+  }
+}
