@@ -1,9 +1,6 @@
 // index.js
 const btn = document.getElementById("listenansicht");
 
-btn.addEventListener("click", () => {
-  btn.textContent = "Listenansicht";
-
   // Array mit allen li-IDs + Bildinfos
   const items = [
     { id: "erste", img: "./assets/img/morning.png", alt: "Morning Briefing Logo" },
@@ -13,35 +10,85 @@ btn.addEventListener("click", () => {
     { id: "fünfte", img: "./assets/img/logo-passwort.webp", alt: "Passwort Logo" }
   ];
 
+  // Speichere Original-Links beim Start
+items.forEach(item => {
+  const li = document.getElementById(item.id);
+  if (!li) return;
+  
+  const link = li.querySelector("a");
+  if (!link) return;
+  
+  // Titel extrahieren
+  item.title = link.textContent.trim();
+  // Kopiere das Original-Link-Element
+  item.originalLink = link.cloneNode(true);
+});
+
+function zeigeListenansicht() {
   items.forEach(item => {
     const li = document.getElementById(item.id);
-    if (!li) return; // Sicherheit
+    if (!li) return;
 
-    // Alten Link + Text
-    const aOld = li.querySelector("a");
-    if (!aOld) return;
-    const text = aOld.textContent.trim();
+    // Alle Kinder entfernen (ohne innerHTML)
+    while (li.firstChild) {
+      li.removeChild(li.firstChild);
+    }
 
-    // Neues <a> + <figure>
+    // Original-Link zurückfügen
+    li.appendChild(item.originalLink.cloneNode(true));
+  });
+
+  btn.textContent = "Zur Kachelansicht";
+  isTileView = false;
+}
+
+function zeigeKachelansicht() {
+  items.forEach(item => {
+    const li = document.getElementById(item.id);
+    if (!li) return;
+
+    // Alle Kinder entfernen
+    while (li.firstChild) {
+      li.removeChild(li.firstChild);
+    }
+
+    // Neues <a> erstellen
     const a = document.createElement("a");
     a.href = "#";
 
+    // <figure> erstellen
     const figure = document.createElement("figure");
 
+    // <img> erstellen
     const img = document.createElement("img");
     img.src = item.img;
     img.alt = item.alt;
     img.width = 150;
     img.height = 150;
 
+    // <figcaption> erstellen
     const figcaption = document.createElement("figcaption");
-    figcaption.textContent = text;
+    figcaption.textContent = item.title;
 
+    // Alles zusammenbauen
     figure.appendChild(img);
     figure.appendChild(figcaption);
     a.appendChild(figure);
 
-    // Alten Link ersetzen
-    li.replaceWith(a);
+    // In das <li> einfügen
+    li.appendChild(a);
   });
+
+  btn.textContent = "Zur Listenansicht";
+  isTileView = true;
+}
+
+btn.addEventListener("click", () => {
+  if (isTileView) {
+    zeigeListenansicht();
+  } else {
+    zeigeKachelansicht();
+  }
 });
+// Startzustand: Listenansicht
+zeigeListenansicht();

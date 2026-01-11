@@ -167,3 +167,10 @@ main {
     width: 100%;
   }
 }
+
+#listenansicht{
+  font-size: larger;
+  background-color: #c5e2f8;
+  border-radius: 5px;
+  border-color: rgb(8, 84, 216);
+}
