@@ -1,23 +1,39 @@
 // index.js
 const btn = document.getElementById("listenansicht");
 
-  // Array mit allen li-IDs + Bildinfos
-  const items = [
-    { id: "erste", img: "./assets/img/morning.png", alt: "Morning Briefing Logo" },
-    { id: "zweite", img: "./assets/img/logo-byte.webp", alt: "Byte Logo" },
-    { id: "dritte", img: "./assets/img/logo-quark-daily.webp", alt: "Quark Daily Logo" },
-    { id: "vierte", img: "./assets/img/logo-sternstunde-philosophie.webp", alt: "Sternstunde Philosophie Logo" },
-    { id: "fünfte", img: "./assets/img/logo-passwort.webp", alt: "Passwort Logo" }
-  ];
+// Array mit allen li-IDs + Bildinfos
+const items = [
+  {
+    id: "erste",
+    img: "./assets/img/morning.png",
+    alt: "Morning Briefing Logo",
+  },
+  { id: "zweite", img: "./assets/img/logo-byte.webp", alt: "Byte Logo" },
+  {
+    id: "dritte",
+    img: "./assets/img/logo-quark-daily.webp",
+    alt: "Quark Daily Logo",
+  },
+  {
+    id: "vierte",
+    img: "./assets/img/logo-sternstunde-philosophie.webp",
+    alt: "Sternstunde Philosophie Logo",
+  },
+  {
+    id: "fünfte",
+    img: "./assets/img/logo-passwort.webp",
+    alt: "Passwort Logo",
+  },
+];
 
-  // Speichere Original-Links beim Start
-items.forEach(item => {
+// Speichere Original-Links beim Start
+items.forEach((item) => {
   const li = document.getElementById(item.id);
   if (!li) return;
-  
+
   const link = li.querySelector("a");
   if (!link) return;
-  
+
   // Titel extrahieren
   item.title = link.textContent.trim();
   // Kopiere das Original-Link-Element
@@ -25,7 +41,7 @@ items.forEach(item => {
 });
 
 function zeigeListenansicht() {
-  items.forEach(item => {
+  items.forEach((item) => {
     const li = document.getElementById(item.id);
     if (!li) return;
 
@@ -43,7 +59,7 @@ function zeigeListenansicht() {
 }
 
 function zeigeKachelansicht() {
-  items.forEach(item => {
+  items.forEach((item) => {
     const li = document.getElementById(item.id);
     if (!li) return;
 
