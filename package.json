@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "podcast-feed-parser": "^1.0.4"
+  }
+}
