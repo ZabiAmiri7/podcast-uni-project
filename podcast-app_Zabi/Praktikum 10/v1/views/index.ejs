@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  <link rel="stylesheet" type="text/css" href="/css/flex.css" />
+</head>
+<body>
+  <%- include('header') %>
+  
+  <div id="Hauptinhalt">
+    <main>
+      <section>
+        <h2>Neuen Podcast abonnieren</h2>
+        <form action="/subscribe" method="post">
+          <label for="feedUrl">RSS-Feed-URL: </label>
+          <input
+            type="url"
+            name="feedUrl"
+            id="feedUrl"
+            size="50"
+            placeholder="https://example.com/feed.rss"
+            required
+          />
+          <button type="submit">Abonnieren</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Abonnierte Podcasts</h2>
+        <button id="listenansicht">Kachelansicht</button>
+        <article>
+          <ul id="abos">
+            <% podcasts.forEach((podcast, index) => { %>
+              <li>
+                <a href="/podcast?pc=<%= index %>">
+                  <img src="<%= podcast.bild %>" alt="<%= podcast.titel %>" />
+                  <span><%= podcast.titel %></span>
+                </a>
+              </li>
+            <% }) %>
+          </ul>
+        </article>
+      </section>
+    </main>
+    
+    <%- include('ankuendigungen') %>
+  </div>
+  
+  <%- include('footer') %>
+  
+  <script src="/js/script.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>
