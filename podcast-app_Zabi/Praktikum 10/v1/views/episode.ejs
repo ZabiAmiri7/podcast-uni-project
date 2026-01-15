@@ -14,7 +14,7 @@
       <section>
         <h2><%= episode.titel %></h2>
         <figure>
-          <img src="<%= podcast.bild %>" alt="<%= podcast.titel %>" height="300" width="300" />
+          <img src="<%= podcast.bildUrl %>" alt="<%= podcast.titel %>" height="300" width="300" />
           <figcaption><%= podcast.titel %></figcaption>
         </figure>
         <h3>
@@ -33,7 +33,7 @@
       
       <section>
         <h2>Abspielen:</h2>
-        <audio src="<%= episode.audioUrl %>" controls>
+        <audio src="<%= episode.EpisodeAudio.url %>" controls>
           Ihr Browser unterstützt das Audio-Element nicht!
         </audio>
       </section>

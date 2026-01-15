@@ -1,0 +1,11 @@
+ <% //podcast.episoden.forEach((episode, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td>
+                <a href="/episode?pc=<%= pcIndex %>&ep=<%= index %>">
+                  <%= episode.titel %>
+                </a>
+              </td>
+              <td><time datetime="<%= episode.datum %>"><%= new Date(episode.datum).toLocaleDateString('de-DE') %></time></td>
+            </tr>
+          <% }) %>
