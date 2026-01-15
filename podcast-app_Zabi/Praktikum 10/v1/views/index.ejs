@@ -11,21 +11,26 @@
   
   <div id="Hauptinhalt">
     <main>
-      <section>
-        <h2>Neuen Podcast abonnieren</h2>
-        <form action="/subscribe" method="post">
-          <label for="feedUrl">RSS-Feed-URL: </label>
+
+      <form
+          action="http://edu.inf.fhdortmund.de/podcastService/testPodcastSearch.php"
+          method="get"
+        >
+          <label for="suche">Suche hier starten: </label>
           <input
-            type="url"
-            name="feedUrl"
-            id="feedUrl"
+            type="search"
+            name="Suche Abbonierte Podcasts"
+            id="suche"
+            pattern="[A-Z]+[A-Z,0-9, ,ca-z]*"
             size="50"
-            placeholder="https://example.com/feed.rss"
+            maxlength="100"
+            placeholder="Titel eingaben ..."
             required
           />
-          <button type="submit">Abonnieren</button>
+          <button type="submit">Finden</button>
         </form>
-      </section>
+
+     
 
       <section>
         <h2>Abonnierte Podcasts</h2>
@@ -47,6 +52,21 @@
     
     <%- include('ankuendigungen') %>
   </div>
+   <section>
+        <h2>Neuen Podcast abonnieren</h2>
+        <form action="/subscribe" method="post">
+          <label for="feedUrl">RSS-Feed-URL: </label>
+          <input
+            type="url"
+            name="feedUrl"
+            id="feedUrl"
+            size="50"
+            placeholder="https://example.com/feed.rss"
+            required
+          />
+          <button type="submit">Abonnieren</button>
+        </form>
+      </section>
   
   <%- include('footer') %>
   
