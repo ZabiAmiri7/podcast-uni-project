@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "ejs": "^4.0.1",
+    "expresss": "^0.0.0",
     "podcast-feed-parser": "^1.0.4"
   }
 }
